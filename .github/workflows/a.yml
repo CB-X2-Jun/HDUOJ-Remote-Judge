@@ -2,8 +2,6 @@ name: 运行hduremote.py
 
 on:
   workflow_dispatch:  # 手动触发
-  schedule:
-    - cron: '0 * * * *'  # 每小时运行一次
 
 jobs:
   run-python:
@@ -15,6 +13,6 @@ jobs:
         with:
           python-version: "3.11"
       - name: 下载依赖
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 Flask
       - name: 运行python
         run: python hduremote.py
